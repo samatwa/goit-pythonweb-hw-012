@@ -7,6 +7,9 @@ from src.database.models import User
 
 
 class UserService:
+    """
+    Сервіс для роботи з користувачами
+    """
     def __init__(self, db: AsyncSession):
         self.repository = UserRepository(db)
 

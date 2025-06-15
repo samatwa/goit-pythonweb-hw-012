@@ -4,6 +4,9 @@ import asyncio
 
 
 class UploadFileService:
+    """
+    Сервіс для завантаження файлів на Cloudinary.
+    """
     def __init__(self, cloud_name, api_key, api_secret):
         cloudinary.config(
             cloud_name=cloud_name,

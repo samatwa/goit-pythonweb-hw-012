@@ -26,7 +26,7 @@ def upgrade() -> None:
     sa.Column('email', sa.String(length=100), nullable=False),
     sa.Column('username', sa.String(length=50), nullable=False),
     sa.Column('hashed_password', sa.String(length=100), nullable=False),
-    sa.Column('is_verified', sa.Boolean(), nullable=False),
+    sa.Column('confirmed', sa.Boolean(), nullable=False),
     sa.Column('avatar_url', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('username')

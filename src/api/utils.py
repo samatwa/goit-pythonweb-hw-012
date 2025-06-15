@@ -5,13 +5,15 @@ from src.database.db import get_db
 
 router = APIRouter(tags=["utils"])
 
-# Перевірка стану API
 @router.get(
     "/healthchecker",
     summary="Перевірка стану API",
     description="Перевіряє з'єднання з базою даних.",
 )
 async def healthchecker(db: AsyncSession = Depends(get_db)):
+    """
+    Перевіряє стан API, виконує простий запит до бази даних.
+    """
     try:
         # Виконуємо асинхронний запит
         result = await db.execute(text("SELECT 1"))

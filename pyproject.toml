@@ -20,8 +20,27 @@ fastapi-mail = "^1.5.0"
 dotenv = "^0.9.9"
 passlib = "^1.7.4"
 python-jose = {extras = ["cryptography"], version = "^3.5.0"}
+sphinx = "^8.2.3"
+pytest = "^8.4.0"
+pytest-cov = "^6.2.1"
+pytest-asyncio = "^1.0.0"
+httpx = "^0.28.1"
+bcrypt = "^4.3.0"
+aiosqlite = "^0.21.0"
+redis-lru = "^0.1.2"
 
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^8.2.3"
+pytest-cov = "^6.2.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["src/tests"]
+asyncio_mode = "auto"
+
+
