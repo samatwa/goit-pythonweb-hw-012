@@ -3,6 +3,9 @@ from pydantic import ConfigDict, EmailStr
 
 
 class Settings(BaseSettings):
+    """
+    Налаштування додатку
+    """
     DATABASE_URL: str
     app_title: str = "Contacts API"
     app_description: str = "REST API для управління контактами"
@@ -12,6 +15,7 @@ class Settings(BaseSettings):
     JWT_SECRET: str
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRATION_SECONDS: int = 3600
+    JWT_REFRESH_EXPIRATION_DAYS: int = 3
 
     MAIL_USERNAME: EmailStr 
     MAIL_PASSWORD: str
